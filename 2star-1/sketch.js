@@ -42,7 +42,7 @@ class Data {
      * Creates a new Data object.
      * @param {number} w The width
      * @param {number} h The height
-     * @param {Color} col The fill colour
+     * @param {color} col The fill colour
      */
     constructor(w, h, col) {
         this.width = w;
@@ -60,4 +60,26 @@ class Data {
         fill(this.colour);
         rect(x, y, this.width, this.height);
     }
+}
+function keyPressed (){
+    let m = ascending ? 1 : -1;
+if (key === 'w') {
+        columns.sort((a, b) => (a.width - b.width) * m);
+        console.log("Sorted by Width");}
+        if (key === 'h'){
+columns.sort((a, b) => (a.height - b.height) * m);
+ console.log("Sorted by hight");}
+
+ if     (key === 'c'){
+    columns.sort((a, b) => (red(a.colour) - red(b.colour)) * m);
+    console.log("Sorted by Colour (Red Channel)");
+
+ }
+
+
+
+
+
+
+
 }
